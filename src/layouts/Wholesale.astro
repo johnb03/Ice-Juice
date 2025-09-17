@@ -1,0 +1,52 @@
+---
+import ContactForm from "../components/ContactForm.astro";
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+import { ViewTransitions } from "astro:transitions";
+
+import "@fontsource/poppins/200.css";
+import "@fontsource/poppins/300.css";
+import "@fontsource/poppins/400.css";
+import "@fontsource/poppins/500.css";
+import "@fontsource/poppins/600.css";
+import "../styles/global.css";
+
+export interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <ViewTransitions />
+    <title>{title}</title>
+  </head>
+  <body class="bg-black">
+    <Nav />
+    <main class="text-white">
+      <section class="py-20">
+        <div class="container mx-auto text-center">
+          <h1 class="text-5xl font-bold mb-4 text-white">GET IN TOUCH</h1>
+          <p class="text-lg text-palette-2-white-smooth/80 mb-10">
+            Start Offering the Premium Quality Your Customers Demand. Let's Talk
+            Business.
+          </p>
+          <ContactForm />
+        </div>
+      </section>
+    </main>
+    <Footer />
+  </body>
+</html>

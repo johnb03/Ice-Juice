@@ -1,0 +1,157 @@
+---
+import "@fontsource/poppins/200.css";
+import "@fontsource/poppins/300.css";
+import "@fontsource/poppins/400.css";
+import "@fontsource/poppins/500.css";
+import "@fontsource/poppins/600.css";
+import "../styles/global.css";
+
+import Navbar from "../components/Nav.astro";
+
+import Footer from "../components/Footer.astro";
+import { ViewTransitions } from "astro:transitions";
+export interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <ViewTransitions />
+    <title>{title}</title>
+  </head>
+  <body
+    class="bg-gradient-to-r from-palette-1-dark-green
+		 via-palette-1-olive-green to-palette-4-medium-green"
+  >
+    <!-- navba -->
+    <nav class="">
+      <Navbar />
+    </nav>
+
+    <main>
+      <section id="hero" class="text-palette-2-white-smooth">
+        <div class="flex flex-col justify-start items-center p-3 pt-10">
+          <h2 class="text-bold text-2xl">Terms and Conditions of Sale</h2>
+          <br />
+          <ol class="md:w-1/2 p-3 list-decimal">
+            <li class="text-xl">Acceptance of Terms</li>
+
+            By placing an order with <span
+              class="font-bold text-palette-3-black">Ice Juice &reg;</span
+            > ("the Company"), the wholesale customer ("the Client") agrees to comply
+            with the following Terms and Conditions of Sale. These terms may be updated
+            periodically, and continued use of our services constitutes acceptance
+            of such updates.
+
+            <br />
+
+            <li class="text-xl">Orders and Pricing</li>
+            <p>
+              <span class="font-bold text-md">Minimum Order:</span> wholesale orders
+              are subject to a minimum value, which will be specified in our catalog
+              or price list.
+            </p>
+
+            <br />
+
+            <li class="text-xl">Orders and Pricing</li>
+            <ul class="p-3 list-disc">
+              <li>
+                <span class="font-bold text-md">Minimum Order:</span> wholesale orders
+                are subject to a minimum value, which will be specified in our catalog
+                or price list.
+              </li>
+              <br />
+              <li>
+                <span class="font-bold text-md">Order Confirmation:</span>An
+                order is considered accepted only after the Company sends a
+                written confirmation (via email) to the Client, detailing the
+                products, quantities, prices, and shipping costs.
+              </li>
+              <br />
+            </ul>
+
+            <li class="text-xl">Payments</li>
+            <ul class="p-3 list-disc">
+              <li>
+                <span class="font-bold text-md">Payment Methods: </span> We accept
+                payments via [Specify payment methods, e.g., bank transfer, credit
+                card for businesses, etc.].
+              </li>
+              <br />
+              <li>
+                <span class="font-bold text-md">Payment Conditions: </span> Full
+                payment must be received before the order is processed and shipped,
+                unless credit terms have been previously agreed upon in writing.
+              </li>
+            </ul>
+            <br />
+
+            <li class="text-xl">Shipping and Delivery</li>
+            <ul class="p-3 list-disc">
+              <li>
+                <span class="font-bold text-md">Shipping times:</span> Orders will
+                be processed and shipped within (2 to 7) business days after payment
+                confirmation.
+              </li>
+              <br />
+              <li>
+                <span class="font-bold text-md">Shipping Costs:</span>An order
+                is considered accepted only after the Company sends a written
+                confirmation (via email) to the Client, detailing the products,
+                quantities, prices, and shipping costs.
+              </li>
+              <br />
+
+              <li>
+                <span class="font-bold text-md">Risk of Loss:</span>The risk of
+                loss or damage to the products passes to the Client at the time
+                the merchandise is delivered to the carrier.
+              </li>
+            </ul>
+            <br />
+            <li class="text-xl">Use and Regulatory Compliance</li>
+
+            <p>
+              The Client is solely responsible for ensuring that the use, sale,
+              and distribution of Ice Juice products comply with all applicable
+              local, state, and federal laws and regulations in their
+              jurisdiction. The Company will not be held liable for the Client's
+              non-compliance with these regulations.
+            </p>
+
+            <br />
+
+            <li class="text-xl">Intellectual Property</li>
+            <p>
+              All intellectual property rights, including trademarks and
+              copyrights related to the products and the Ice Juice brand, are
+              the exclusive property of the Company. The resale of our products
+              does not grant the Client any rights to our intellectual property
+              beyond what is expressly agreed upon.
+            </p>
+
+            <br />
+          </ol>
+
+          <section>
+            <Footer />
+          </section>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

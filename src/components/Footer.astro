@@ -1,0 +1,97 @@
+---
+import { Image } from "astro:assets";
+import Logo from "../Images/logo-icejuice.png";
+---
+
+<footer class="bg-palette-1-almost-black-green w-screen">
+  <div
+    class="flex flex-col items-center gap-4 p-4 sm:flex-row sm:justify-between"
+  >
+    <div class="w-80 flex flex-col gap-4 items-start">
+      <Image class="w-28 h-auto" src={Logo} alt="Logo Ice juice" />
+      <p class="text-xl font-bold text-palette-2-white-smooth">
+        Wholesale Distribution
+      </p>
+      <p class="text-sm max-w-80 text-left text-palette-2-white-smooth">
+        4400 Los Gatos Blvd, Suite 200 Fremont, CA 94538
+      </p>
+      <p class="text-md text-palette-2-white-smooth">salesicejuice@gmail.com</p>
+    </div>
+
+    <div
+      class="w-80 rounded-md gap-4 p-6
+       bg-[rgb(153,154,154,0.3)]
+       text-palette-2-white-smooth
+       text-left"
+    >
+      <h2 class="text-xl font-bold">Quik links</h2>
+
+      <ul class="flex flex-col gap-4 p-4 text-xs">
+        <il class="hover:text-yellow-400 trasiction-all duration-300"
+          ><a href="/about">About Us</a></il
+        >
+        <il class="hover:text-yellow-400 trasiction-all duration-300"
+          ><a href="/wholesale">Product Catalog</a></il
+        >
+
+        <il class="hover:text-yellow-400 trasiction-all duration-300"
+          ><a href="/Wholesale">Contact Us</a></il
+        >
+        <il class="hover:text-yellow-400 trasiction-all duration-300"
+          ><a href="/Termsandcondition">Terms and Conditions of Sale</a></il
+        >
+        <il class="hover:text-yellow-400 trasiction-all duration-300"
+          ><a href="/PrivacyPolicy">Privacy Policy</a></il
+        >
+      </ul>
+    </div>
+
+    <div
+      class="md:w-1/2 rounded-md gap-4 p-6
+       bg-[rgb(153,154,154,0.3)]
+       text-palette-2-white-smooth
+       text-left"
+    >
+      <p>
+        <span class="font-extrabold text-xs">Ice Juice Legal Disclaimer</span>
+      </p>
+      <p class="text-[8px]">
+        <br />
+        Not for sale to minors. Ice Juice products may contain nicotine, a highly
+        addictive substance. Warning <span
+          ><a
+            class="text-yellow-300"
+            href="https://www.p65warnings.ca.gov/"
+            target="_blank"
+            rel="noopener noreferrer">(California Proposition 65)</a
+          ></span
+        >: This product can expose you to chemicals, including nicotine, which
+        is known to the State of California to cause birth defects or other
+        reproductive harm. For more information, please visit the [Proposition
+        65 Warnings Website](Prop 65 Warnings Website). Our products are
+        intended for adult smokers. Please ensure you are of legal smoking age
+        in your jurisdiction before making any purchase. Consult a healthcare
+        professional before using our products. Ice Juice E-Liquids may contain
+        Propylene Glycol, Vegetable Glycerin, Nicotine, and flavorings. Our
+        products can be poisonous if ingested. Always keep them out of reach of
+        children and pets. FDA Disclaimer: The statements regarding our products
+        have not been evaluated by the Food and Drug Administration. Ice Juice
+        products are not intended to diagnose, treat, cure, or prevent any
+        disease. The information presented here is not a substitute for advice
+        from a healthcare professional. Read our terms and conditions before
+        purchasing. Use Ice Juice products at your own risk!
+      </p>
+    </div>
+  </div>
+
+  <p class="text-sm text-palette-2-white-smooth">
+    © 2025 Ice Juice. Todos los derechos reservados. by <span
+      class="font-bold text-yellow-400"
+      ><a
+        href="https://johnb03.github.io/portafolio-John-Berroa/"
+        target="_blank"
+        rel="noopener noreferrer">Metodev &copy;</a
+      ></span
+    >
+  </p>
+</footer>

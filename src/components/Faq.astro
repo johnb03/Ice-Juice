@@ -1,0 +1,38 @@
+---
+const faqs = [
+    {
+        question: "What are the minimum order quantities (MOQs)?",
+        answer: "Our MOQs are designed to be flexible. They vary depending on the product line and your region. Contact our sales team for a detailed breakdown tailored to your business."
+    },
+    {
+        question: "Do you offer marketing support for distributors?",
+        answer: "Absolutely! We provide our partners with a comprehensive marketing kit, including high-resolution product imagery, social media assets, and in-store promotional materials to help you drive sales."
+    },
+    {
+        question: "What is the shelf life of your e-liquids?",
+        answer: "Our e-liquids are manufactured to the highest standards and typically have a shelf life of two years from the date of production. Each bottle is marked with an expiration date for clarity."
+    },
+    {
+        question: "Can I request exclusive flavors for my region?",
+        answer: "We often collaborate with our key distributors to offer exclusive flavors tailored to their market. This is subject to volume and a long-term partnership agreement. Let's discuss the possibilities!"
+    }
+];
+---
+
+<div class="space-y-4 max-w-3xl mx-auto">
+    {faqs.map(faq => (
+        <details class="group bg-palette-1-dark-green/30 p-6 rounded-lg text-left cursor-pointer">
+            <summary class="flex justify-between items-center text-lg font-semibold text-palette-2-white-smooth list-none">
+                {faq.question}
+                <span class="transition-transform duration-300 group-open:rotate-180">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-palette-2-white-smooth/70" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </span>
+            </summary>
+            <p class="text-palette-2-white-smooth/80 mt-4">
+                {faq.answer}
+            </p>
+        </details>
+    ))}
+</div>

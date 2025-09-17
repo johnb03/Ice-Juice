@@ -1,0 +1,79 @@
+---
+import { Image } from "astro:assets";
+import Client1 from "../Images/1-client.png";
+import Client2 from "../Images/2-client.png";
+import Client3 from "../Images/3-client.png";
+import Client4 from "../Images/4-client.png";
+
+const reviews = [
+    {
+        client: `"Cloud Chasers" Vape Shop`,
+        name: "Carlos M",
+        review: `Switching to Ice Juice was the best decision we made. The ordering process is incredibly easy, and communication with their sales team is impeccable. Best of all, their products fly off the shelves; the flavor quality is a magnet for customers. A truly reliable partner.`,
+        image: Client1,
+    },
+    {
+        client: `"VaporXpress" Distributor`,
+        name: "Ana S.",
+        review: `We needed a supplier that could handle large volumes without sacrificing quality. Ice Juice not only met, but exceeded our expectations. The consistency across their production batches is crucial for us. We've seen a steady increase in sales of their premium line. They are a key strategic partner.`,
+        image: Client2,
+    },
+    {
+        client: `"The Happy Vaper" - Online Store`,
+        name: "Javier P.",
+        review: `As an online store, logistics and presentation are critical. Ice Juice's packaging is professional, and shipments arrive on time and well-protected. My customers always comment on how delicious the flavors are. The quality-to-price ratio is unbeatable, which allows us to offer a superior product and maintain good profitability.`,
+        image: Client3,
+    },
+    {
+        client: `"Juicy Drops"`,
+        name: "Julian C.",
+        review: `Purchasing Experience: "I was looking for something to differentiate my store from the competition. With Ice Juice, I found it. Their line of intense flavors is a best-seller, and the support they provide is exceptional. They helped us with product recommendations tailored to our market. Working with them is a pleasure.`,
+        image: Client4,
+    }
+];
+---
+
+<div class="w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0%,_black_10%,_black_90%,transparent_100%)] py-16">
+    <ul class="flex items-center justify-center md:justify-start [&_li]:mx-4 animate-loop-scroll">
+        {reviews.map(review => (
+            <li>
+                <div class="flex flex-col w-96 items-center outline outline-palette-3-light-gray gap-2 p-2 rounded-md bg-pallette-rgb-gray-50%-opacity shadow-2xl shadow-palette-1-almost-black-green">
+                    <Image class="rounded-full w-20 h-auto" src={review.image} alt={`Cliente ${review.name}`} />
+                    <div class="h-auto flex flex-col gap-1">
+                        <h2 class="text-md font-bold text-palette-2-white-smooth">{review.client}</h2>
+                        <h3 class="text-md font-semibold text-palette-2-white-smooth">{review.name}</h3>
+                        <p class="text-xs font-medium text-left text-palette-1-almost-black-green">{review.review}</p>
+                    </div>
+                    <div>
+                        <i class="bx bxs-star" style="color:#f0dd08"></i>
+                        <i class="bx bxs-star" style="color:#f0dd08"></i>
+                        <i class="bx bxs-star" style="color:#f0dd08"></i>
+                        <i class="bx bxs-star" style="color:#f0dd08"></i>
+                        <i class="bx bxs-star" style="color:#f0dd08"></i>
+                    </div>
+                </div>
+            </li>
+        ))}
+    </ul>
+    <ul class="flex items-center justify-center md:justify-start [&_li]:mx-4 animate-loop-scroll" aria-hidden="true">
+        {reviews.map(review => (
+            <li>
+                <div class="flex flex-col w-96 items-center outline outline-palette-3-light-gray gap-2 p-2 rounded-md bg-pallette-rgb-gray-50%-opacity shadow-2xl shadow-palette-1-almost-black-green">
+                    <Image class="rounded-full w-20 h-auto" src={review.image} alt={`Cliente ${review.name}`} />
+                    <div class="h-auto flex flex-col gap-1">
+                        <h2 class="text-md font-bold text-palette-2-white-smooth">{review.client}</h2>
+                        <h3 class="text-md font-semibold text-palette-2-white-smooth">{review.name}</h3>
+                        <p class="text-xs font-medium text-left text-palette-1-almost-black-green">{review.review}</p>
+                    </div>
+                    <div>
+                        <i class="bx bxs-star" style="color:#f0dd08"></i>
+                        <i class="bx bxs-star" style="color:#f0dd08"></i>
+                        <i class="bx bxs-star" style="color:#f0dd08"></i>
+                        <i class="bx bxs-star" style="color:#f0dd08"></i>
+                        <i class="bx bxs-star" style="color:#f0dd08"></i>
+                    </div>
+                </div>
+            </li>
+        ))}
+    </ul>
+</div>

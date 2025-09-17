@@ -1,0 +1,42 @@
+---
+const { prevUrl, nextUrl } = Astro.props;
+---
+
+<div class="flex justify-between w-full mt-8">
+  <a
+    href={prevUrl}
+    class="inline-flex items-center justify-center w-32 h-12 px-6 font-medium tracking-wide text-palette-1-almost-black-green transition duration-200 rounded-xl shadow-md bg-palette-2-white-smooth hover:text-palette-2-white-smooth hover:bg-palette-1-almost-black-green focus:shadow-outline focus:outline-none cursor-pointer"
+  >
+    <svg
+      class="w-5 h-5 mr-2"
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+      ><path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg
+    >
+    Back
+  </a>
+  <a
+    href={nextUrl}
+    class="inline-flex items-center justify-center w-32 h-12 px-6 font-medium tracking-wide text-palette-1-almost-black-green transition duration-200 rounded-xl shadow-md bg-palette-2-white-smooth hover:text-palette-2-white-smooth hover:bg-palette-1-almost-black-green focus:shadow-outline focus:outline-none cursor-pointer"
+  >
+    Next
+    <svg
+      class="w-5 h-5 ml-2"
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+      ><path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg
+    >
+  </a>
+</div>

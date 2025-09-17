@@ -1,0 +1,54 @@
+---
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+import { ViewTransitions } from "astro:transitions";
+
+import "@fontsource/poppins/200.css";
+import "@fontsource/poppins/300.css";
+import "@fontsource/poppins/400.css";
+import "@fontsource/poppins/500.css";
+import "@fontsource/poppins/600.css";
+import "../styles/global.css";
+
+const title = "Thank You!";
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <link
+            href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+            rel="stylesheet"
+        />
+        <meta charset="UTF-8" />
+        <meta name="description" content="Thank you for your submission" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="generator" content={Astro.generator} />
+        <ViewTransitions />
+        <title>{title}</title>
+    </head>
+    <body class="bg-black">
+        <Nav />
+        <main class="text-white min-h-[70vh] flex items-center justify-center">
+            <section class="py-20">
+                <div class="container mx-auto text-center">
+                    <h1 class="text-5xl font-bold mb-4 text-white">
+                        Thank You!
+                    </h1>
+                    <p class="text-lg text-palette-2-white-smooth/80 mb-10">
+                        Your message has been sent successfully. We'll get back
+                        to you soon.
+                    </p>
+                    <a
+                        href="/"
+                        class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-full shadow-lg text-palette-2-white-smooth bg-palette-3-electric-lime hover:bg-palette-3-electric-lime/80 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-palette-3-electric-lime transition-transform transform hover:scale-105"
+                    >
+                        Go back home
+                    </a>
+                </div>
+            </section>
+        </main>
+        <Footer />
+    </body>
+</html>

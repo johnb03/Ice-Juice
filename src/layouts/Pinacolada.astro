@@ -1,0 +1,190 @@
+---
+import { Image } from "astro:assets";
+import PinaColada from "../Images/pina-colada.png";
+import { ViewTransitions } from "astro:transitions";
+import Buttonbuy from "../components/Buttonbuy.astro";
+import ButtonProductNext from "../components/buttonProductNext.astro";
+
+import "@fontsource/poppins/200.css";
+import "@fontsource/poppins/300.css";
+import "@fontsource/poppins/400.css";
+import "@fontsource/poppins/500.css";
+import "@fontsource/poppins/600.css";
+import "../styles/global.css";
+
+import Navbar from "../components/Nav.astro";
+
+import Footer from "../components/Footer.astro";
+
+export interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <link
+      href="https://cdn.boxicons.com/fonts/basic/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <ViewTransitions />
+    <title>{title}</title>
+  </head>
+  <body class="bg-gradient-to-r from-yellow-600
+		 via-yellow-500 to-yellow-400">
+    <!-- navbar -->
+    <nav>
+      <Navbar />
+    </nav>
+
+    <main class="container">
+      <!-- hero -->
+      <section id="product_pear-mint   ">
+        <div
+          class="grid grid-cols-1 w-screen sm:grid-cols-3 text-palette-1-almost-black-green p-6"
+        >
+          <div class="max-w-sm mx-auto mb-5">
+            <h1 class="text-4xl text-palette-2-white-smooth text-shadow">
+              Piña Colada
+            </h1>
+            <br />
+            <p class="text-sm">
+              Escape to the tropics with this creamy blend of sweet pineapple
+              and silky coconut. A smooth, exotic flavor that feels like a
+              vacation in every inhale.
+            </p>
+            <br />
+            <p class="text-sm">
+              This e-liquid captures the essence of a tropical paradise. With
+              the perfect balance between the juicy tartness of pineapple and
+              the indulgent creaminess of coconut, it's a flavor that transports
+              your customers to the beach with every puff.
+            </p>
+          </div>
+
+          <div
+            class="product-image-container relative mx-auto flex justify-center items-center w-[300px] h-[350px]"
+          >
+            <Image
+              class="w-80 h-auto drop-shadow-xl"
+              src={PinaColada}
+              alt="pear mint"
+            />
+          </div>
+
+          <div class="max-w-sm mx-auto mb-5 text-shadow">
+            <h2 class="text-2xl text-palette-2-white-smooth">This e-liquid</h2>
+            <br />
+            <p class="text-sm text-palette-2-almost-black-green">
+              A classic summer flavor that's a guaranteed best-seller
+              year-round. Piña Colada is the ideal choice for customers seeking
+              an exotic and relaxing vaping experience. Add it to your inventory
+              and offer a tropical escape in every bottle.
+            </p>
+            <br />
+            <div id="icon_descripcion ">
+              <div class="w-20 h-20 flex flex-col gap-2">
+                <div class="">
+                  <span
+                    class="inline-flex items-center justify-center w-9 h-9 bg-palette-2-white-smooth rounded"
+                    ><svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M10.25 7.25C10 7 10 6.575 10 5.5C10 3.567 12 2 12 2C12 2 13.5 3.567 13.5 5.5C13.5 6.461 13.5 7 13.25 7.25"
+                        stroke="black"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"></path>
+                      <path
+                        d="M8.5 8.49997C7.895 7.04097 6.431 5.21647 5.5 4.49997C8.2055 3.99297 10.387 5.64997 11.5 6.99997M15 7.99997C15.726 6.65147 17.152 5.15247 18 4.49997C15.1785 3.97097 13.0645 5.63047 12 6.99997"
+                        stroke="black"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"></path>
+                      <path
+                        d="M15.9998 9.00004L5.49977 14.5M7.99977 9.00004L18.4998 14.5M17.4998 20.5L5.49977 13.5M18.4998 13.5L6.49977 20.5M8.36227 8.68704C8.0666 8.94924 7.77896 9.22036 7.49977 9.50004C5.40477 11.595 5.05077 15.432 5.00127 17.14C4.98427 17.715 4.98827 18.301 5.20577 18.8335C5.43927 19.405 5.93727 20.203 6.99977 21C8.99977 22.5 14.9998 22.5 16.9998 21C18.0578 20.2065 18.5558 19.4125 18.7903 18.841C19.0108 18.304 19.0153 17.712 18.9978 17.1315C18.9478 15.419 18.5918 11.5915 16.4998 9.50004C16.1998 9.20071 15.9121 8.92971 15.6368 8.68704C13.5078 6.80354 10.4918 6.80354 8.36227 8.68704Z"
+                        stroke="black"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"></path>
+                    </svg>
+                  </span>
+                  <span
+                    class="inline-flex items-center justify-center w-9 h-9 bg-palette-2-white-smooth rounded"
+                    ><i
+                      class="bx bx-shield"
+                      style="color:#000000; font-size: 1.75rem;"></i>
+                  </span>
+                </div>
+
+                <div>
+                  <span
+                    class="inline-flex items-center justify-center w-9 h-9 bg-palette-2-white-smooth rounded"
+                    ><i
+                      class="bx bx-air"
+                      style="color:#000000; font-size:1.75rem;"></i>
+                  </span>
+                  <span
+                    class="inline-flex items-center justify-center w-9 h-9 bg-palette-2-white-smooth rounded"
+                    ><i
+                      class="bx bx-leaf"
+                      style="color:#000000; font-size:1.75rem;"></i>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="max-w-sm mx-auto mb-5">
+            <Buttonbuy text="Buy Now" />
+          </div>
+          <ButtonProductNext
+            prevUrl="/ProductsPearMint"
+            nextUrl="/ProductsMint"
+          />
+        </div>
+        <!-- footer -->
+      </section>
+      <section>
+        <Footer />
+      </section>
+    </main>
+  </body>
+</html>
+
+<style>
+  .product-image-container::before {
+    content: "";
+    position: absolute;
+    /* Make the glow larger than the container to allow smooth fading */
+    width: 150%;
+    height: 120%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(
+      circle,
+      rgba(183, 238, 82, 0.4),
+      transparent 60%
+    );
+    /* Place the glow behind the image */
+    z-index: -1;
+  }
+</style>

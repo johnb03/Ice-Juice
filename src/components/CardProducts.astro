@@ -1,0 +1,75 @@
+---
+import { Image } from "astro:assets";
+import mintImage from "../Images/mint.png";
+import pearImage from "../Images/pear.png";
+import pinaColadaImage from "../Images/pina-colada.png";
+import pearmintImage from "../Images/pear-mint.png"; // Import the Pearmint image
+import ButtonAction from "./ButtonAction.astro";
+---
+
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+    <!-- Card 1: Mint -->
+    <article
+        id="card-1"
+        class="flex flex-col items-center justify-between gap-4"
+    >
+        <figure class="w-64 h-auto drop-shadow-lg">
+            <Image src={mintImage} alt="Mint flavor" />
+        </figure>
+        <div
+            class="flex flex-col items-center gap-2 text-palette-2-white-smooth text-center"
+        >
+            <h2 class="text-2xl">Mint</h2>
+            <ButtonAction href="/ProductsMint" />
+        </div>
+    </article>
+
+    <!-- Card 2: Pear Mint (Animation Target) -->
+    <article
+        id="card-2"
+        class="flex flex-col items-center justify-between gap-4"
+    >
+        <!-- This is the static placeholder that the animated bottle will morph into -->
+        <figure id="pearmint-target" class="w-64 h-auto drop-shadow-lg">
+            <Image src={pearmintImage} alt="Pear Mint flavor" />
+        </figure>
+        <div
+            class="flex flex-col items-center gap-2 text-palette-2-white-smooth text-center"
+        >
+            <h2 class="text-2xl">Pear Mint</h2>
+            <ButtonAction href="/ProductsPearMint" />
+        </div>
+    </article>
+
+    <!-- Card 3: Pear -->
+    <article
+        id="card-3"
+        class="flex flex-col items-center justify-between gap-4"
+    >
+        <figure class="w-64 h-auto drop-shadow-lg">
+            <Image src={pearImage} alt="Pear flavor" />
+        </figure>
+        <div
+            class="flex flex-col items-center gap-2 text-palette-2-white-smooth text-center"
+        >
+            <h2 class="text-2xl">Pear</h2>
+            <ButtonAction href="/ProductsPear" />
+        </div>
+    </article>
+
+    <!-- Card 4: Pina Colada -->
+    <article
+        id="card-4"
+        class="flex flex-col items-center justify-between gap-4"
+    >
+        <figure class="w-64 h-auto drop-shadow-lg">
+            <Image src={pinaColadaImage} alt="Pina Colada flavor" />
+        </figure>
+        <div
+            class="flex flex-col items-center gap-2 text-palette-2-white-smooth text-center"
+        >
+            <h2 class="text-2xl">Pina Colada</h2>
+            <ButtonAction href="/ProductsPinaC" />
+        </div>
+    </article>
+</div>

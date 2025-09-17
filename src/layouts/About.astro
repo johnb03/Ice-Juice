@@ -1,0 +1,140 @@
+---
+import "@fontsource/poppins/200.css";
+import "@fontsource/poppins/300.css";
+import "@fontsource/poppins/400.css";
+import "@fontsource/poppins/500.css";
+import "@fontsource/poppins/600.css";
+import "../styles/global.css";
+
+import Navbar from "../components/Nav.astro";
+
+import Footer from "../components/Footer.astro";
+import { ViewTransitions } from "astro:transitions";
+export interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <ViewTransitions />
+    <title>{title}</title>
+  </head>
+  <body
+    class="bg-gradient-to-r from-palette-1-dark-green
+		 via-palette-1-olive-green to-palette-4-medium-green"
+  >
+    <!-- navba -->
+    <nav class="">
+      <Navbar />
+    </nav>
+
+    <main>
+      <section
+        class="min-w-80 max-w-screen-xl text-shadow flex flex-col items-center text-palette-2-white-smooth mx-auto p-3 mdp-6"
+      >
+        <p class="text-sm md:text-xl">About Us</p>
+        <br />
+
+        <h2 class="text-3xl md:text-4xl md:w-[25rem]">
+          Passion, Quality, and Commitment.
+        </h2>
+
+        <div class="flex gap-3">
+          <div class="w-72 md:w-full md:flex md:justify-between">
+            <div class="flex flex-col gap-3 justify-center w-72 md:w-[40%]">
+              <div
+                class="w-[300px] h-[250px] bg-gray-50 img-about rounded-lg shadow"
+              >
+              </div>
+              <p class="text-sm md:text-xl">
+                At Ice Juice, our story isn't just about selling e-liquids; it’s
+                about an unwavering dedication to quality and the vaping
+                experience. We were born from a passion for creating flavors
+                that truly stand out in the market, using only the finest
+                ingredients to ensure unmatched purity and consistency in every
+                bottle.
+              </p>
+            </div>
+            <br />
+
+            <div class="w-72 md:w-[30%]">
+              <h2 class="text-xl">A Commitment to Our Partners</h2>
+              <br />
+              <p class="text-sm md:text-xl">
+                We understand that your business's success is our success.
+                That's why we’ve built a wholesale operation that goes beyond
+                simple distribution. We are a strategic partner that offers you
+                high-demand products, attractive profit margins, and support
+                that helps you grow.
+              </p>
+              <br />
+              <p class="text-sm md:text-xl">
+                <span class="font-bold text-md">Our mission is simple: </span>
+                <br />to provide your business with the premium e-liquids your
+                customers love and that help you thrive in a competitive market.
+                We are proud to be a supplier you can rely on, with a robust
+                supply chain and a team dedicated to your satisfaction.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <br />
+        <article>
+          <p class="text-md font-bold md:text-xl">Why Choose Us?</p>
+
+          <div class="flex flex-col justify-center text-xs md:flex-row">
+            <div class="p-2">
+              <p class="">
+                <span class="font-bold">Premium Quality:</span>
+                <br />Every Ice Juice flavor is a work of art, formulated to the
+                highest standards for a superior vaping experience.
+              </p>
+            </div>
+
+            <div class="p-2">
+              <p>
+                <span class="font-bold">Constant Innovation:</span>
+                <br /> We are always researching and developing new flavor profiles
+                to keep your inventory fresh and appealing.
+              </p>
+            </div>
+
+            <div class="p-2">
+              <p>
+                <span class="font-bold">Dedicated Support:</span>
+                <br /> Our team is here to help you with every order, ensuring a
+                smooth and hassle-free experience.
+              </p>
+            </div>
+          </div>
+        </article>
+      </section>
+    </main>
+    <section>
+      <Footer />
+    </section>
+  </body>
+</html>
+
+<style>
+  .img-about {
+    background-image: url(../Images/hero-about.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: no;
+  }
+</style>

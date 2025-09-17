@@ -1,0 +1,125 @@
+---
+// This component handles the GSAP animations for the page.
+---
+
+<script>
+    import { gsap } from "gsap";
+    import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+    function setupHeroAnimation(): () => void {
+        gsap.registerPlugin(ScrollTrigger);
+
+        const animatedProduct =
+            document.querySelector<HTMLElement>(".product-animated");
+        const targetContainer =
+            document.querySelector<HTMLElement>("#pearmint-target");
+        const heroContainer = document.querySelector<HTMLElement>("#hero");
+        const heroText = document.querySelector<HTMLElement>("#hero-text");
+        const heroButton = document.querySelector<HTMLElement>("#hero-button");
+        const fakeProductTitle = document.querySelector<HTMLElement>(
+            "#fake-product-title",
+        );
+        const realProductTitle =
+            document.querySelector<HTMLElement>("#product-title");
+        const panelProduct =
+            document.querySelector<HTMLElement>("#panel-product");
+
+        if (
+            !animatedProduct ||
+            !targetContainer ||
+            !heroContainer ||
+            !heroText ||
+            !heroButton ||
+            !fakeProductTitle ||
+            !realProductTitle ||
+            !panelProduct
+        ) {
+            console.log("One or more elements for the animation are missing.");
+            return () => {};
+        }
+
+        // --- INITIAL STATES ---
+        gsap.set(targetContainer, { autoAlpha: 0 });
+        gsap.set(heroButton, { autoAlpha: 0 });
+        gsap.set(fakeProductTitle, { autoAlpha: 0 }); // Ghost title starts hidden
+        gsap.set(realProductTitle, { autoAlpha: 0 }); // Real title starts hidden
+        // --- END INITIAL STATES ---
+
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                id: "hero-animation",
+                trigger: heroContainer,
+                start: "top top",
+                endTrigger: panelProduct,
+                end: "center center",
+                scrub: 1.5,
+                pin: true,
+                pinSpacing: true,
+                // markers: true,
+                invalidateOnRefresh: true,
+                onLeave: () => gsap.set(realProductTitle, { autoAlpha: 1 }),
+                onEnterBack: () => gsap.set(realProductTitle, { autoAlpha: 0 }),
+            },
+        });
+
+        // --- TIMELINE ANIMATIONS ---
+        tl.to(heroText, { autoAlpha: 0, yPercent: -30, ease: "power1.in" }, 0)
+            .to(heroButton, { autoAlpha: 1, ease: "power1.in" }, 0)
+            // --- SIMPLIFIED & CORRECTED FAKE TITLE ANIMATION ---
+            // Just fade it in. Its position is already correct via CSS.
+            .to(fakeProductTitle, { autoAlpha: 1, ease: "power1.out" }, 0.2)
+            .fromTo(
+                animatedProduct,
+                { rotation: 15 },
+                {
+                    x: () =>
+                        targetContainer.getBoundingClientRect().left -
+                        animatedProduct.getBoundingClientRect().left,
+                    y: () =>
+                        targetContainer.getBoundingClientRect().top -
+                        animatedProduct.getBoundingClientRect().top,
+                    scale: () =>
+                        targetContainer.offsetWidth /
+                        animatedProduct.offsetWidth,
+                    rotation: 0,
+                    ease: "power2.inOut",
+                },
+                0,
+            )
+            .to(animatedProduct, { autoAlpha: 0, duration: 0.1 }, ">-=0.1")
+            .to(targetContainer, { autoAlpha: 1, duration: 0.1 }, "<");
+
+        return () => {
+            /* Cleanup handled globally */
+        };
+    }
+
+    function debounce<F extends (...args: any[]) => any>(
+        func: F,
+        timeout = 100,
+    ) {
+        let timer: ReturnType<typeof setTimeout>;
+        return function (this: ThisParameterType<F>, ...args: Parameters<F>) {
+            clearTimeout(timer);
+            timer = setTimeout(() => {
+                func.apply(this, args);
+            }, timeout);
+        };
+    }
+
+    function runAnimations() {
+        ScrollTrigger.getAll().forEach((st) => st.kill(true));
+        setupHeroAnimation();
+        document.addEventListener(
+            "astro:before-swap",
+            () => {
+                ScrollTrigger.getAll().forEach((st) => st.kill(true));
+            },
+            { once: true },
+        );
+    }
+
+    const debouncedRunAnimations = debounce(runAnimations, 150);
+    document.addEventListener("astro:page-load", runAnimations);
+    window.addEventListener("resize", debouncedRunAnimations);
+</script>

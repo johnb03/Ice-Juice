@@ -1,0 +1,123 @@
+---
+import { Image } from "astro:assets";
+import logoIceJuice from "../Images/logo-icejuice.png";
+---
+
+<link
+    href="https://cdn.boxicons.com/fonts/basic/boxicons.min.css"
+    rel="stylesheet"
+/>
+
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-2">
+    <div class="hidden w- md:flex justify-between items-center py-3">
+        <a href="/">
+            <Image class="w-28 h-auto" src={logoIceJuice} alt="logo icejuice" />
+        </a>
+        <div
+            id="nav-links"
+            class="border max-w-[50.5em] rounded-2xl border-1px-solid-palette-2-white-smooth h-10 px-2 text-sm md:text-xs xl:text-sm text-palette-2-white-smooth"
+        >
+            <ul class="flex h-10 items-center justify-between gap-8 px-2">
+                <li class="nav-item">
+                    <a href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/wholesale">Wholesale</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/StoreLocator">Store Locator</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/about">About us</a>
+                </li>
+
+                <li class="nav-item products-link">
+                    <a href="/ProductsMint">Products</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div
+    id="nav-mobile"
+    class="md:hidden fixed bottom-4 left-1/2 -translate-x-1/2 z-50 bg-palette-1-almost-black-green/80
+         w-11/12 max-w-sm h-14 rounded-full shadow-lg"
+>
+    <ul
+        class="text-2xl flex justify-around items-center h-full text-palette-2-white-smooth"
+    >
+        <li>
+            <a
+                class="inline-block hover:text-yellow-400 hover:-translate-y-1 transition-all duration-300"
+                href="/"
+            >
+                <i class="bx bx-home"></i>
+            </a>
+        </li>
+        <li>
+            <a
+                class="inline-block hover:text-yellow-400 hover:-translate-y-1 transition-all duration-300"
+                href="/about"
+                ><i class="bx bx-user"></i>
+            </a>
+        </li>
+        <li>
+            <a
+                class="inline-block hover:text-yellow-400 hover-translate-y-2 text-3xl"
+                href="/ProductsMint"
+                ><i class="bx bxs-store"></i>
+            </a>
+        </li>
+        <li>
+            <a
+                class="inline-block hover:text-yellow-400 hover:-translate-y-1 transition-all duration-300"
+                href="/wholesale"><i class="bx bx-package"></i></a
+            >
+        </li>
+
+        <li>
+            <a
+                class="inline-block hover:text-yellow-400 hover:-translate-y-1 transition-all duration-300"
+                href="/StoreLocator"
+                ><i class="bx bx-location"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+<style>
+    .nav-item {
+        padding: 0.25rem 1rem;
+        border-radius: 9999px;
+        transition:
+            background-color 0.5s ease,
+            box-shadow 0.3s ease,
+            color 0.3s ease;
+        cursor: pointer;
+    }
+
+    /* 1. By default, "Products" is active */
+    .products-link {
+        background-color: #f3f4f6;
+        box-shadow:
+            0 1px 3px 0 rgb(0 0 0 / 0.1),
+            0 1px 2px -1px rgb(0 0 0 / 0.1);
+        color: black;
+    }
+
+    /* 2. When hovering the nav container, reset the "Products" link */
+    #nav-links:hover .products-link {
+        background-color: transparent;
+        box-shadow: none;
+        color: black;
+    }
+
+    /* 3. Apply the hover effect to the specific item being hovered over */
+    .nav-item:hover {
+        background-color: #f3f4f6;
+        box-shadow:
+            0 1px 3px 0 rgb(0 0 0 / 0.1),
+            0 1px 2px -1px rgb(0 0 0 / 0.1);
+        color: black;
+    }
+</style>
